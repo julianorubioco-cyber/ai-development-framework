@@ -82,6 +82,34 @@ Isso cria somente dentro do projeto:
 └── releases/
 ```
 
+
+## Conversa normal ou `/implement`
+
+Você não precisa usar `/implement` para perguntas comuns.
+
+Exemplos que **não** iniciam o pipeline:
+
+```text
+O que é JWT?
+Como funciona este módulo?
+Qual arquivo controla o login?
+Explique este erro.
+```
+
+Exemplos que iniciam o fluxo de implementação:
+
+```text
+Crie uma tela de login.
+Corrija o erro do checkout.
+Adicione pagamentos com Stripe.
+```
+
+Pedidos ambíguos, como “dá para melhorar essa tela?”, devem gerar uma explicação
+curta e um pedido de confirmação antes de qualquer alteração.
+
+O comando `/implement` sempre força o pipeline disciplinado.
+
+
 ## Pipeline adaptativo
 
 ### Pequeno
@@ -105,6 +133,7 @@ pequena, mas destrutiva ou sensível, recebe fluxo de alto risco.
 - [Economia de tokens](docs/004-token-economy.md)
 - [Terminologia](docs/005-terminology.md)
 - [Processo de versões](docs/006-release-process.md)
+- [Roteamento inteligente](docs/007-intent-routing.md)
 
 - [Arquitetura](docs/01-architecture.md)
 - [Orquestração](docs/02-orchestration.md)
@@ -116,7 +145,7 @@ pequena, mas destrutiva ou sensível, recebe fluxo de alto risco.
 
 ## Estado do projeto
 
-Versão atual: `v0.3.0`.
+Versão atual: `v0.4.0`.
 
 Esta versão é intencionalmente conservadora. O framework fornece instruções e
 contratos operacionais para o Claude Code; ele não substitui testes, permissões,

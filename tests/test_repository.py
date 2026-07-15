@@ -52,5 +52,22 @@ class RepositoryTests(unittest.TestCase):
         text = (ROOT / "docs/004-token-economy.md").read_text(encoding="utf-8")
         self.assertIn("Economia nunca justifica uma aprovação sem evidência", text)
 
+
+    def test_router_document_exists(self):
+        self.assertTrue((ROOT / "docs/007-intent-routing.md").exists())
+
+    def test_project_instructions_distinguish_questions_from_changes(self):
+        text = (ROOT / "templates/project-workspace/.claude/CLAUDE.md").read_text(encoding="utf-8")
+        self.assertIn("Pergunta comum", text)
+        self.assertIn("Alteração real de projeto", text)
+        self.assertIn("não inicialize o workspace", text)
+
+    def test_implement_can_initialize_workspace(self):
+        text = (ROOT / "skills/implement/SKILL.md").read_text(encoding="utf-8")
+        self.assertIn("Inicialização automática do workspace", text)
+
+    def test_route_skill_exists(self):
+        self.assertTrue((ROOT / "skills/route/SKILL.md").exists())
+
 if __name__ == "__main__":
     unittest.main()

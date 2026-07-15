@@ -1,5 +1,15 @@
 # Changelog
 
+## 0.4.0 — 2026-07-15
+
+- Roteamento inteligente entre pergunta, análise, ambiguidade e alteração.
+- Perguntas comuns deixam de iniciar o pipeline.
+- Solicitações reais podem iniciar `/implement` automaticamente.
+- `/implement` inicializa o workspace quando necessário.
+- Nova Skill manual `/route` para diagnosticar a classificação.
+- Política de economia aplicada antes da leitura de arquivos.
+- Testes para garantir que o roteador preserve perguntas simples.
+
 ## 0.3.0 — 2026-07-15
 
 - Definição oficial de visão, princípios e arquitetura.

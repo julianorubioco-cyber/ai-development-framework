@@ -55,3 +55,11 @@ Use como base os modelos deste framework quando disponíveis. Em arquivos já
 existentes, preserve o conteúdo e apenas acrescente seções claramente ausentes.
 
 Finalize com `WORKSPACE_STATUS: INITIALIZED` ou `WORKSPACE_STATUS: BLOCKED`.
+
+## Uso automático
+
+Esta Skill pode ser aplicada pelo `/implement` quando uma solicitação de alteração
+for explícita e o projeto ainda não possuir `.claude/`.
+
+Ela não deve ser executada automaticamente para perguntas comuns, explicações,
+consultas ou análises sem alteração.

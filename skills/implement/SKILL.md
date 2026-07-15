@@ -27,6 +27,22 @@ disable-model-invocation: true
 
 # Comando principal
 
+
+## Inicialização automática do workspace
+
+Antes de iniciar o fluxo:
+
+1. localize a raiz real do projeto;
+2. verifique se `<raiz>/.claude/` existe;
+3. se não existir, aplique o contrato da Skill `init-workspace`;
+4. preserve qualquer conteúdo existente;
+5. nunca crie memória em `~/.claude/`;
+6. continue o pipeline somente após a inicialização segura.
+
+A ausência de workspace não exige uma pergunta extra quando a solicitação já for
+uma alteração explícita ou quando o usuário tiver chamado `/implement`.
+
+
 Você coordena as Skills; não finja que criou processos separados se não puder
 invocá-los. Aplique os contratos de cada etapa de forma explícita.
 
