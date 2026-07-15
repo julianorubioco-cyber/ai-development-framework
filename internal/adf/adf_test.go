@@ -58,3 +58,62 @@ func TestEmbeddedSkills(t *testing.T) {
 		t.Fatalf("poucas Skills embutidas: %d", len(names))
 	}
 }
+
+func TestDetectMazyOSCompatibility(t *testing.T) {
+	project := t.TempDir()
+	for _, dir := range []string{"__memoria", "identidade", "marketing"} {
+		if err := os.MkdirAll(filepath.Join(project, dir), 0o755); err != nil {
+			t.Fatal(err)
+		}
+	}
+	if err := os.WriteFile(filepath.Join(project, "CLAUDE.md"), []byte("# Projeto"), 0o644); err != nil {
+		t.Fatal(err)
+	}
+
+	profile, err := DetectCompatibility(project)
+	if err != nil {
+		t.Fatal(err)
+	}
+	if profile.Mode != "compatibility" {
+		t.Fatalf("modo esperado compatibility, recebido %s", profile.Mode)
+	}
+	found := false
+	for _, system := range profile.DetectedSystems {
+		if system == "mazyos-compatible" {
+			found = true
+		}
+	}
+	if !found {
+		t.Fatal("MazyOS não foi detectado")
+	}
+}
+
+func TestCompatibilityInitDoesNotDuplicateBusinessMemory(t *testing.T) {
+	project := t.TempDir()
+	if err := os.MkdirAll(filepath.Join(project, "__memoria"), 0o755); err != nil {
+		t.Fatal(err)
+	}
+	if err := os.WriteFile(filepath.Join(project, "CLAUDE.md"), []byte("# Projeto"), 0o644); err != nil {
+		t.Fatal(err)
+	}
+
+	result, err := InitWorkspace(project, false)
+	if err != nil {
+		t.Fatal(err)
+	}
+	if result.Compatibility.Mode != "compatibility" {
+		t.Fatal("modo compatibilidade não ativado")
+	}
+	for _, forbidden := range []string{
+		"company.md", "context.md", "decisions.md", "architecture.md",
+	} {
+		if _, err := os.Stat(filepath.Join(project, ".claude", forbidden)); !os.IsNotExist(err) {
+			t.Fatalf("arquivo duplicado criado: %s", forbidden)
+		}
+	}
+	for _, required := range []string{"specs", "plans", "reviews", "releases"} {
+		if !existsDir(filepath.Join(project, ".claude", required)) {
+			t.Fatalf("artefato técnico ausente: %s", required)
+		}
+	}
+}

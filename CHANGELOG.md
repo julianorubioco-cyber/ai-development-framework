@@ -1,5 +1,17 @@
 # Changelog
 
+## 0.7.0 — 2026-07-15
+
+- Novo modo de compatibilidade adaptativo.
+- Detecção de `__memoria`, `CLAUDE.md`, identidade, marketing, dados e saídas.
+- Reconhecimento de estrutura compatível com MazyOS.
+- Novo comando `adf detect`.
+- `adf init` cria somente artefatos técnicos quando já existe memória.
+- Prevenção de memórias e arquivos de negócio paralelos.
+- Mapeamento persistido em `.claude/compatibility.json`.
+- Skills implement, context, memory e init-workspace atualizadas.
+- Testes contra duplicação de fontes de verdade.
+
 ## 0.6.0 — 2026-07-15
 
 - CLI nativa reescrita em Go.

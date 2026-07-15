@@ -18,6 +18,17 @@ disable-model-invocation: true
 - Pare e pergunte quando houver ambiguidade material, risco destrutivo ou mudança de escopo.
 
 
+# Compatibilidade
+
+Antes de escrever memória:
+
+1. detecte memória existente no projeto;
+2. se houver `__memoria/`, `_memoria/`, `memoria/`, `memory/` ou `knowledge/`,
+   use essa estrutura como fonte oficial;
+3. não crie `.claude/memory/` paralela;
+4. respeite o formato e os arquivos existentes;
+5. grave apenas quando a curadoria indicar valor permanente.
+
 # Destino obrigatório
 
 Escreva somente em `<raiz-do-projeto>/.claude/`. Nunca grave conhecimento do

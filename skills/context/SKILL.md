@@ -33,4 +33,14 @@ Comece por manifestos, README, configuração e árvore resumida. Não leia o pr
 inteiro. Salve fatos estáveis em `.claude/context.md` e arquitetura em
 `.claude/architecture.md`, preservando curadoria e origem verificável.
 
+Antes de criar ou atualizar contexto, detecte se o projeto já possui uma fonte
+de verdade externa, como `__memoria/` ou `CLAUDE.md` na raiz.
+
+Em modo de compatibilidade:
+
+- leia a estrutura existente;
+- não crie `.claude/context.md` duplicado;
+- produza contexto técnico apenas no plano ou artefato da tarefa;
+- preserve a fonte de verdade do projeto.
+
 Não altere código. Finalize com `CONTEXT_STATUS: READY` ou `CONTEXT_STATUS: BLOCKED`.

@@ -28,6 +28,24 @@ disable-model-invocation: true
 # Comando principal
 
 
+## Descoberta e compatibilidade
+
+Antes de inicializar qualquer workspace:
+
+1. detecte estruturas existentes de memória e organização;
+2. procure `__memoria/`, `_memoria/`, `memoria/`, `memory/`, `knowledge/`;
+3. procure `CLAUDE.md` na raiz, `identidade/`, `marketing/`, `dados/` e `saidas/`;
+4. quando houver uma estrutura existente, trate-a como fonte oficial;
+5. não crie memória de negócio paralela;
+6. crie apenas os artefatos técnicos ausentes em `.claude/`;
+7. registre o mapeamento em `.claude/compatibility.json`.
+
+Em modo de compatibilidade, use:
+
+- memória de negócio: estrutura já existente;
+- instruções do projeto: `CLAUDE.md` da raiz;
+- specs, planos, preflights, reviews, releases e histórico técnico: `.claude/`.
+
 ## Inicialização automática do workspace
 
 Antes de iniciar o fluxo:

@@ -20,6 +20,15 @@ disable-model-invocation: true
 
 # Objetivo
 
+Inicializar de forma adaptativa.
+
+Antes de criar arquivos, detecte se o projeto já possui memória, instruções ou
+organização de outro framework. Se existir, ative modo de compatibilidade e crie
+somente `specs/`, `plans/`, `preflights/`, `reviews/`, `releases/`, `history/`
+e `compatibility.json` dentro de `.claude/`.
+
+Nunca duplique memória de negócio.
+
 Criar o workspace `.claude/` na raiz real do projeto atual.
 
 ## Segurança de localização

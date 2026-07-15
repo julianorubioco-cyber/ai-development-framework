@@ -15,6 +15,7 @@ func usage() {
 Uso:
   adf install [--dry-run]
   adf init [caminho] [--dry-run]
+  adf detect [caminho]
   adf doctor
   adf uninstall [--restore-backup] [--dry-run]
   adf version
@@ -47,6 +48,13 @@ func main() {
 			path = flags.Arg(0)
 		}
 		result, err = adf.InitWorkspace(path, *dryRun)
+
+	case "detect":
+		path := "."
+		if len(os.Args) > 2 {
+			path = os.Args[2]
+		}
+		result, err = adf.DetectCompatibility(path)
 
 	case "doctor":
 		result, err = adf.Doctor()
