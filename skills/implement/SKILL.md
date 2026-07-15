@@ -6,6 +6,13 @@ disable-model-invocation: true
 ---
 
 
+## Economia de contexto
+
+- Consulte primeiro índices e artefatos diretamente relacionados.
+- Abra somente arquivos de alta relevância.
+- Expanda a leitura apenas mediante dependência verificável.
+- Não repita conteúdo já registrado em artefatos válidos.
+
 ## Regras obrigatórias
 
 - Seja agnóstico à tecnologia.

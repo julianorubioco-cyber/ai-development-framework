@@ -37,6 +37,7 @@ Crie, sem sobrescrever conteúdo existente:
 .claude/
 ├── CLAUDE.md
 ├── context.md
+├── context-budget.md
 ├── architecture.md
 ├── company.md
 ├── decisions.md

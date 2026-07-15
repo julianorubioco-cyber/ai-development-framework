@@ -1,20 +1,38 @@
 # Roadmap
 
-## 0.2
-- Instalação e desinstalação seguras.
-- Manifesto, backup, testes e CI.
+## 0.3 — Fundamentos oficiais
 
-## 0.3
-- Comando de diagnóstico.
-- Migração segura de workspaces antigos.
-- Relatório de compatibilidade por versão do Claude Code.
+- Visão.
+- Princípios.
+- Arquitetura.
+- Terminologia.
+- Economia de tokens.
+- Processo de versões.
 
-## 0.4
-- Exemplos completos para aplicações pequenas, médias e grandes.
-- Fixtures para testar classificação de risco e roteamento.
+## 0.4 — Diagnóstico e migração
 
-## 1.0
-- Contratos estáveis.
+- `/doctor`.
+- Verificação de instalação.
+- Migração de workspaces antigos.
+- Compatibilidade entre versões.
+
+## 0.5 — Exemplos executáveis
+
+- Projeto pequeno.
+- Projeto médio.
+- Projeto de alto risco.
+- Casos de revisão e memória.
+
+## 0.6 — CLI inicial
+
+- `adf install`.
+- `adf init`.
+- `adf doctor`.
+- `adf uninstall`.
+
+## 1.0 — Contratos estáveis
+
+- Instalação multiplataforma testada.
 - Documentação completa.
-- Suite de testes de instalação em Windows, Linux e macOS.
-- Política formal de versionamento e migração.
+- Exemplos reais.
+- Política de migração e compatibilidade.

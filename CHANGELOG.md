@@ -1,5 +1,15 @@
 # Changelog
 
+## 0.3.0 — 2026-07-15
+
+- Definição oficial de visão, princípios e arquitetura.
+- Política formal de economia de tokens e contexto.
+- Terminologia padronizada.
+- Processo de releases documentado.
+- Novo `context-budget.md` no workspace.
+- Regras econômicas adicionadas ao contexto e ao orquestrador.
+- Testes para garantir a presença dos fundamentos.
+
 ## 0.2.0 — 2026-07-15
 
 - Instalador passa a registrar exatamente quais Skills foram instaladas.

@@ -99,6 +99,13 @@ pequena, mas destrutiva ou sensível, recebe fluxo de alto risco.
 
 ## Documentação
 
+- [Visão](docs/001-vision.md)
+- [Princípios](docs/002-principles.md)
+- [Arquitetura oficial](docs/003-architecture.md)
+- [Economia de tokens](docs/004-token-economy.md)
+- [Terminologia](docs/005-terminology.md)
+- [Processo de versões](docs/006-release-process.md)
+
 - [Arquitetura](docs/01-architecture.md)
 - [Orquestração](docs/02-orchestration.md)
 - [Memória por projeto](docs/03-project-memory.md)
@@ -109,7 +116,7 @@ pequena, mas destrutiva ou sensível, recebe fluxo de alto risco.
 
 ## Estado do projeto
 
-Versão atual: `v0.2.0`.
+Versão atual: `v0.3.0`.
 
 Esta versão é intencionalmente conservadora. O framework fornece instruções e
 contratos operacionais para o Claude Code; ele não substitui testes, permissões,
