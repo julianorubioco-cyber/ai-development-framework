@@ -37,7 +37,13 @@
 - `adf update`.
 - `adf uninstall`.
 
-## 0.7 — Binários nativos
+## 0.6 — Binários nativos
+
+- CLI compilada em Go.
+- Releases para seis plataformas.
+- Instaladores sem Python ou Git.
+
+## 0.7 — Autoatualização e assinatura
 
 - `adf install`.
 - `adf init`.

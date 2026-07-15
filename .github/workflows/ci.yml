@@ -9,17 +9,27 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v4
+      - uses: actions/setup-go@v5
+        with:
+          go-version-file: go.mod
       - uses: actions/setup-python@v5
         with:
           python-version: "3.12"
-      - name: Install package
-        run: python -m pip install .
-      - name: Validate skills
+      - name: Validate Skills
         run: python scripts/validate.py
-      - name: Run tests
-        run: python -m unittest discover -s tests -v
+      - name: Test native CLI
+        run: go test ./...
+      - name: Vet native CLI
+        run: go vet ./...
+      - name: Build native CLI
+        run: go build -o /tmp/adf ./cmd/adf
+      - name: Smoke test
+        run: |
+          /tmp/adf version
+          /tmp/adf install --dry-run
       - name: Check shell syntax
         run: |
+          bash -n install.sh
           bash -n scripts/install.sh
           bash -n scripts/uninstall.sh
           bash -n scripts/init-workspace.sh

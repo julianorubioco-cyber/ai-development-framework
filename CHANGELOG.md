@@ -1,5 +1,16 @@
 # Changelog
 
+## 0.6.0 — 2026-07-15
+
+- CLI nativa reescrita em Go.
+- Executável único, sem dependência de Python, Go ou Git para o usuário final.
+- Skills e templates embutidos no binário.
+- Builds para Windows, Linux e macOS em x64 e ARM64.
+- GitHub Actions publica binários e checksums automaticamente.
+- Instaladores detectam sistema e arquitetura e baixam a release correta.
+- Comandos nativos install, init, doctor, uninstall e version.
+- Testes unitários e smoke tests da CLI compilada.
+
 ## 0.5.0 — 2026-07-15
 
 - Nova CLI multiplataforma `adf`.

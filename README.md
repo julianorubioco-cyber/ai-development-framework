@@ -38,26 +38,26 @@ O comando `/loop` é mantido como alias compatível.
 
 ## Instalação em um comando
 
+A CLI é um executável nativo. O usuário não precisa instalar Python, Go ou Git.
+
 ### Windows PowerShell
 
 ```powershell
-irm https://raw.githubusercontent.com/julianorubioco-cyber/ai-development-framework/main/install-adf.ps1 | iex
+irm https://raw.githubusercontent.com/julianorubioco-cyber/ai-development-framework/main/install.ps1 | iex
 ```
 
 ### macOS/Linux
 
 ```bash
-curl -fsSL https://raw.githubusercontent.com/julianorubioco-cyber/ai-development-framework/main/install-adf.sh | sh
+curl -fsSL https://raw.githubusercontent.com/julianorubioco-cyber/ai-development-framework/main/install.sh | sh
 ```
 
-Depois, dentro de qualquer projeto:
+Depois:
 
 ```text
+adf doctor
 adf init
 ```
-
-No Claude Code, use `/implement` ou converse normalmente. O roteador só inicia o
-pipeline quando houver uma solicitação real de alteração.
 
 
 ## Instalação manual alternativa no Windows
@@ -160,6 +160,7 @@ pequena, mas destrutiva ou sensível, recebe fluxo de alto risco.
 - [Processo de versões](docs/006-release-process.md)
 - [Roteamento inteligente](docs/007-intent-routing.md)
 - [CLI e instalação automática](docs/008-cli-installation.md)
+- [CLI nativa](docs/009-native-cli.md)
 
 - [Arquitetura](docs/01-architecture.md)
 - [Orquestração](docs/02-orchestration.md)
@@ -171,7 +172,7 @@ pequena, mas destrutiva ou sensível, recebe fluxo de alto risco.
 
 ## Estado do projeto
 
-Versão atual: `v0.5.0`.
+Versão atual: `v0.6.0`.
 
 Esta versão é intencionalmente conservadora. O framework fornece instruções e
 contratos operacionais para o Claude Code; ele não substitui testes, permissões,
