@@ -1,179 +1,170 @@
 # AI Development Framework (ADF)
 
-Framework de desenvolvimento orientado por Skills para Claude Code.
+> Um framework open source para transformar o Claude Code em uma equipe
+> completa de desenvolvimento de software.
 
-O ADF organiza o trabalho do agente em etapas independentes: compreensão, contexto,
-planejamento, validação antes de agir, implementação, testes, revisão por evidências,
-segurança, documentação, release e memória persistente por projeto.
+O ADF adiciona uma camada de engenharia sobre o Claude Code através de
+Skills, memória por projeto e uma CLI nativa (`adf`).
 
-## Princípios
+------------------------------------------------------------------------
 
-- Skills reutilizáveis ficam globalmente em `~/.claude/skills/`.
-- Conhecimento de clientes nunca é salvo nas Skills globais.
-- A memória operacional fica somente em `<projeto>/.claude/`.
-- Nenhuma implementação começa sem aprovação explícita no preflight.
-- A revisão posterior exige evidências verificáveis.
-- O pipeline se adapta ao tamanho e ao risco da tarefa.
-- O agente lê o menor contexto necessário.
-- A memória é curada por prioridade e organizada por domínio.
-- Cadeia de pensamento e raciocínio privado nunca são armazenados.
+# ✨ Recursos
 
-## Comando principal
+-   🧠 Memória persistente por projeto
+-   ⚡ Economia inteligente de contexto
+-   🔍 Detecção automática da stack
+-   📋 Especificação antes da implementação
+-   🏗️ Planejamento técnico automático
+-   🧪 Testes integrados
+-   🔒 Revisão e segurança
+-   📚 Documentação automática
+-   🚀 Pipeline de Release
+-   💻 CLI nativa para Windows, Linux e macOS
 
-Depois de instalar, abra um projeto no VS Code e execute:
+------------------------------------------------------------------------
 
-```text
-/implement criar um sistema de login com e-mail e senha
-```
+# Instalação (30 segundos)
 
-Fluxo principal:
+## Windows
 
-```text
-SPEC → CONTEXT → PLAN → PREFLIGHT → APROVAÇÃO DO USUÁRIO
-→ BUILD → TEST → REVIEW → etapas necessárias → RELEASE → MEMORY
-```
-
-O comando `/loop` é mantido como alias compatível.
-
-
-## Instalação em um comando
-
-A CLI é um executável nativo. O usuário não precisa instalar Python, Go ou Git.
-
-### Windows PowerShell
-
-```powershell
+``` powershell
 irm https://raw.githubusercontent.com/julianorubioco-cyber/ai-development-framework/main/install.ps1 | iex
 ```
 
-### macOS/Linux
+## macOS / Linux
 
-```bash
+``` bash
 curl -fsSL https://raw.githubusercontent.com/julianorubioco-cyber/ai-development-framework/main/install.sh | sh
 ```
 
-Depois:
+Depois execute:
 
-```text
+``` text
 adf doctor
+```
+
+------------------------------------------------------------------------
+
+# Primeiro projeto
+
+Entre na pasta do projeto:
+
+``` text
+cd MeuProjeto
+```
+
+Inicialize o workspace:
+
+``` text
 adf init
 ```
 
+Abra a pasta no Claude Code e utilize:
 
-## Instalação manual alternativa no Windows
-
-No PowerShell, dentro deste repositório:
-
-```powershell
-Set-ExecutionPolicy -Scope Process Bypass
-.\scripts\install.ps1
+``` text
+/implement Criar sistema de login com e-mail e senha
 ```
 
-## Instalação rápida no macOS/Linux
+Fluxo executado:
 
-```bash
-chmod +x scripts/install.sh
-./scripts/install.sh
+``` text
+SPEC
+ ↓
+CONTEXT
+ ↓
+PLAN
+ ↓
+PREFLIGHT
+ ↓
+APROVAÇÃO DO USUÁRIO
+ ↓
+BUILD
+ ↓
+TEST
+ ↓
+REVIEW
+ ↓
+SECURITY
+ ↓
+REFACTOR
+ ↓
+DOCS
+ ↓
+RELEASE
 ```
 
-O instalador copia as Skills para `~/.claude/skills/`, preservando backups quando
-encontra arquivos existentes.
+------------------------------------------------------------------------
 
-## Inicializar o workspace de um projeto
+# Documentação
 
-Abra o projeto no terminal e execute:
+-   📘 INSTALL.md --- Guia completo de instalação
+-   📗 docs/cli.md --- Comandos da CLI
+-   📙 docs/skills.md --- Todas as Skills
+-   📕 docs/memory.md --- Sistema de memória
+-   📒 docs/architecture.md --- Arquitetura do framework
+-   ❓ docs/faq.md --- Perguntas frequentes
 
-```text
-/init-workspace
+------------------------------------------------------------------------
+
+# Estrutura
+
+``` text
+AI-Development-Framework/
+├── cmd/
+├── internal/
+├── skills/
+├── templates/
+├── docs/
+├── tests/
+├── install.ps1
+├── install.sh
+├── go.mod
+└── README.md
 ```
 
-Isso cria somente dentro do projeto:
+------------------------------------------------------------------------
 
-```text
-.claude/
-├── CLAUDE.md
-├── context.md
-├── architecture.md
-├── company.md
-├── decisions.md
-├── memory/
-│   └── index.md
-├── knowledge/
-├── history/
-├── specs/
-├── plans/
-├── preflights/
-├── reviews/
-└── releases/
+# Desenvolvimento
+
+``` bash
+git clone https://github.com/julianorubioco-cyber/ai-development-framework.git
+cd ai-development-framework
+
+git add .
+git commit -m "feat: minha alteração"
+git push
 ```
 
+Para publicar uma nova versão:
 
-## Conversa normal ou `/implement`
-
-Você não precisa usar `/implement` para perguntas comuns.
-
-Exemplos que **não** iniciam o pipeline:
-
-```text
-O que é JWT?
-Como funciona este módulo?
-Qual arquivo controla o login?
-Explique este erro.
+``` bash
+git tag v0.7.0
+git push origin v0.7.0
 ```
 
-Exemplos que iniciam o fluxo de implementação:
+O GitHub Actions executará testes, compilará os binários para Windows,
+Linux e macOS e publicará automaticamente uma nova Release.
 
-```text
-Crie uma tela de login.
-Corrija o erro do checkout.
-Adicione pagamentos com Stripe.
-```
+------------------------------------------------------------------------
 
-Pedidos ambíguos, como “dá para melhorar essa tela?”, devem gerar uma explicação
-curta e um pedido de confirmação antes de qualquer alteração.
+# Roadmap
 
-O comando `/implement` sempre força o pipeline disciplinado.
+-   ✅ CLI nativa
+-   ✅ Instalador automático
+-   ✅ CI/CD
+-   🔄 Auto Update (`adf self-update`)
+-   🔄 Context Engine
+-   🔄 Memory Engine
+-   🔄 Plugin System
+-   🔄 Marketplace de Skills
 
+------------------------------------------------------------------------
 
-## Pipeline adaptativo
+# Licença
 
-### Pequeno
-`SPEC → PREFLIGHT → BUILD → REVIEW → MEMORY`
+MIT
 
-### Médio
-`SPEC → CONTEXT → PLAN → PREFLIGHT → BUILD → TEST → REVIEW → MEMORY`
+------------------------------------------------------------------------
 
-### Grande ou de alto risco
-`SPEC → CONTEXT → PLAN → PREFLIGHT → BUILD → TEST → REVIEW → SECURITY
-→ REFACTOR quando necessário → DOCS → RELEASE → MEMORY`
-
-A classificação não deve ser usada para pular controles de segurança. Uma alteração
-pequena, mas destrutiva ou sensível, recebe fluxo de alto risco.
-
-## Documentação
-
-- [Visão](docs/001-vision.md)
-- [Princípios](docs/002-principles.md)
-- [Arquitetura oficial](docs/003-architecture.md)
-- [Economia de tokens](docs/004-token-economy.md)
-- [Terminologia](docs/005-terminology.md)
-- [Processo de versões](docs/006-release-process.md)
-- [Roteamento inteligente](docs/007-intent-routing.md)
-- [CLI e instalação automática](docs/008-cli-installation.md)
-- [CLI nativa](docs/009-native-cli.md)
-
-- [Arquitetura](docs/01-architecture.md)
-- [Orquestração](docs/02-orchestration.md)
-- [Memória por projeto](docs/03-project-memory.md)
-- [Economia de contexto](docs/04-context-economy.md)
-- [Instalação e uso](docs/05-installation.md)
-- [Desinstalação e restauração](docs/06-uninstallation.md)
-- [Desenvolvimento e contribuições](CONTRIBUTING.md)
-
-## Estado do projeto
-
-Versão atual: `v0.6.0`.
-
-Esta versão é intencionalmente conservadora. O framework fornece instruções e
-contratos operacionais para o Claude Code; ele não substitui testes, permissões,
-revisão humana ou controles de implantação.
+Feito com ❤️ para tornar o desenvolvimento com IA mais organizado,
+reproduzível e profissional.
