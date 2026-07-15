@@ -29,7 +29,15 @@
 - Projeto de alto risco.
 - Casos de revisão e memória.
 
-## 0.7 — CLI inicial
+## 0.5 — CLI inicial
+
+- `adf install`.
+- `adf init`.
+- `adf doctor`.
+- `adf update`.
+- `adf uninstall`.
+
+## 0.7 — Binários nativos
 
 - `adf install`.
 - `adf init`.

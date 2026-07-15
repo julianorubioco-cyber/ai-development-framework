@@ -1,5 +1,15 @@
 # Changelog
 
+## 0.5.0 — 2026-07-15
+
+- Nova CLI multiplataforma `adf`.
+- Comandos install, init, doctor, update e uninstall.
+- Detecção automática de sistema operacional.
+- Instaladores remotos de um comando para Windows, macOS e Linux.
+- Empacotamento Python sem dependências externas.
+- Assets de Skills e templates incluídos no pacote.
+- Testes da CLI e isolamento da memória.
+
 ## 0.4.0 — 2026-07-15
 
 - Roteamento inteligente entre pergunta, análise, ambiguidade e alteração.
