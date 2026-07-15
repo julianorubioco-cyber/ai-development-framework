@@ -17,6 +17,8 @@ Uso:
   adf init [caminho] [--dry-run]
   adf detect [caminho]
   adf doctor
+  adf update [--skip-skills]
+  adf self-update [--skip-skills]
   adf uninstall [--restore-backup] [--dry-run]
   adf version
 
@@ -38,7 +40,6 @@ func main() {
 		dryRun := flags.Bool("dry-run", false, "simula sem alterar arquivos")
 		_ = flags.Parse(os.Args[2:])
 		result, err = adf.Install(*dryRun)
-
 	case "init":
 		flags := flag.NewFlagSet("init", flag.ExitOnError)
 		dryRun := flags.Bool("dry-run", false, "simula sem alterar arquivos")
@@ -48,32 +49,31 @@ func main() {
 			path = flags.Arg(0)
 		}
 		result, err = adf.InitWorkspace(path, *dryRun)
-
 	case "detect":
 		path := "."
 		if len(os.Args) > 2 {
 			path = os.Args[2]
 		}
 		result, err = adf.DetectCompatibility(path)
-
 	case "doctor":
 		result, err = adf.Doctor()
-
+	case "update", "self-update":
+		flags := flag.NewFlagSet(os.Args[1], flag.ExitOnError)
+		skipSkills := flags.Bool("skip-skills", false, "não reinstala as Skills")
+		_ = flags.Parse(os.Args[2:])
+		result, err = adf.Update(!*skipSkills)
 	case "uninstall":
 		flags := flag.NewFlagSet("uninstall", flag.ExitOnError)
 		restore := flags.Bool("restore-backup", false, "restaura Skills anteriores")
 		dryRun := flags.Bool("dry-run", false, "simula sem alterar arquivos")
 		_ = flags.Parse(os.Args[2:])
 		result, err = adf.Uninstall(*restore, *dryRun)
-
 	case "version", "--version", "-v":
 		fmt.Printf("ADF %s\n", adf.Version)
 		return
-
 	case "help", "--help", "-h":
 		usage()
 		return
-
 	default:
 		err = errors.New("comando desconhecido: " + os.Args[1])
 	}

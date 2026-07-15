@@ -43,7 +43,13 @@
 - Releases para seis plataformas.
 - Instaladores sem Python ou Git.
 
-## 0.7 — Autoatualização e assinatura
+## 0.8 — Autoatualização
+
+- `adf update`.
+- Verificação SHA-256.
+- Substituição multiplataforma.
+
+## 0.9 — Assinatura e canais
 
 - `adf install`.
 - `adf init`.

@@ -1,5 +1,15 @@
 # Changelog
 
+## 0.8.0 — 2026-07-15
+
+- Novo `adf update` e alias `adf self-update`.
+- Consulta da última GitHub Release.
+- Download por sistema e arquitetura.
+- Verificação SHA-256 obrigatória.
+- Substituição segura no Windows, macOS e Linux.
+- Reinstalação opcional das Skills.
+- Testes e documentação de atualização.
+
 ## 0.7.0 — 2026-07-15
 
 - Novo modo de compatibilidade adaptativo.

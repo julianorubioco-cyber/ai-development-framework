@@ -109,6 +109,23 @@ Isso cria somente dentro do projeto:
 
 
 
+
+## Atualização automática
+
+```text
+adf update
+```
+
+ou:
+
+```text
+adf self-update
+```
+
+A CLI baixa a última Release, valida o checksum e substitui o executável correto
+para o sistema operacional.
+
+
 ## Compatibilidade com estruturas existentes
 
 O ADF não cria uma segunda memória quando o projeto já usa outro sistema.
@@ -177,6 +194,7 @@ pequena, mas destrutiva ou sensível, recebe fluxo de alto risco.
 - [CLI e instalação automática](docs/008-cli-installation.md)
 - [CLI nativa](docs/009-native-cli.md)
 - [Modo de compatibilidade](docs/010-compatibility-mode.md)
+- [Autoatualização](docs/011-self-update.md)
 
 - [Arquitetura](docs/01-architecture.md)
 - [Orquestração](docs/02-orchestration.md)
@@ -188,7 +206,7 @@ pequena, mas destrutiva ou sensível, recebe fluxo de alto risco.
 
 ## Estado do projeto
 
-Versão atual: `v0.7.0`.
+Versão atual: `v0.8.0`.
 
 Esta versão é intencionalmente conservadora. O framework fornece instruções e
 contratos operacionais para o Claude Code; ele não substitui testes, permissões,
